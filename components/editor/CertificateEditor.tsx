@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { CertificateData } from "@/types/certificate";
 import { CertificateForm } from "./CertificateForm";
 import { CertificatePreview } from "./CertificatePreview";
-import { DownloadPngButton } from "./DownloadPngButton";
+import { DownloadButtons } from "./DownloadButtons";
 
 const DEFAULT_INSTRUCTOR_NAME = "Brad Traversy";
 
@@ -29,7 +29,7 @@ export function CertificateEditor() {
       </aside>
       <main className="flex flex-col items-center justify-center gap-6 bg-stage px-4 py-12 sm:px-8">
         <CertificatePreview data={data} />
-        <DownloadPngButton data={data} />
+        <DownloadButtons data={data} />
       </main>
     </div>
   );
