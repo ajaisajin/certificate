@@ -24,7 +24,7 @@ export function BlackBorderCertificate({ data }: BlackBorderCertificateProps) {
       ))}
       <div className={styles.body}>
         <div className={styles.label}>Traversy Media</div>
-        <h1 className={styles.title}>Certificate</h1>
+        <h2 className={styles.title}>Certificate</h2>
         <div className={styles.titleSub}>of completion</div>
         <div className={`${styles.label} ${styles.presented}`}>
           This certificate is proudly presented to

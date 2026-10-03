@@ -1,19 +1,20 @@
-import { BlackBorderCertificate } from "@/components/certificate/BlackBorderCertificate";
-import type { CertificateData } from "@/types/certificate";
-
-const PLACEHOLDER_CERTIFICATE: CertificateData = {
-  recipientName: "Priya Raghavan",
-  courseTitle: "Modern JavaScript From The Beginning 2.0",
-  date: "October 1, 2026",
-  instructorName: "Brad Traversy",
-};
+import { CertificateEditor } from "@/components/editor/CertificateEditor";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 overflow-x-auto bg-stage p-12">
-      <div className="m-auto shadow-stage">
-        <BlackBorderCertificate data={PLACEHOLDER_CERTIFICATE} />
-      </div>
-    </main>
+    <>
+      <header className="flex items-center border-b border-border bg-surface px-6 py-3">
+        <h1 className="flex items-center gap-2 text-lg font-semibold">
+          <span
+            aria-hidden="true"
+            className="grid size-[26px] place-items-center rounded-sm bg-accent font-serif font-bold text-accent-ink"
+          >
+            C
+          </span>
+          Certificreate
+        </h1>
+      </header>
+      <CertificateEditor />
+    </>
   );
 }
