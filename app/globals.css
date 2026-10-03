@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+
+  --bg: #0b0f17;
+  --surface: #121826;
+  --surface-2: #1a2233;
+  --border: #253046;
+
+  --text: #e7ecf4;
+  --muted: #94a0b4;
+  --faint: #5b667a;
+
+  --accent: #3b6fd8;
+  --accent-hover: #5584e6;
+  --accent-ink: #ffffff;
+  --accent-soft: rgb(59 111 216 / 0.16);
+  --focus-ring: rgb(85 132 230 / 0.55);
+
+  --danger: #f2706b;
+  --success: #4cc38a;
+
+  --stage: #070a10;
+  --stage-shadow: 0 24px 60px rgb(0 0 0 / 0.55);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: light;
+
+    --bg: #f4f6fa;
+    --surface: #ffffff;
+    --surface-2: #eef1f6;
+    --border: #dde3ec;
+
+    --text: #141a26;
+    --muted: #5c6779;
+    --faint: #9aa4b5;
+
+    --accent: #1f4fae;
+    --accent-hover: #2a5fc9;
+    --accent-soft: rgb(31 79 174 / 0.1);
+    --focus-ring: rgb(31 79 174 / 0.35);
+
+    --stage: #e3e8f0;
+    --stage-shadow: 0 18px 44px rgb(20 30 50 / 0.18);
   }
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-focus-ring: var(--focus-ring);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-stage: var(--stage);
+
+  --shadow-stage: var(--stage-shadow);
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
 }
