@@ -1,16 +1,6 @@
-/* Theme contract: every --cert-* variable is declared here on the template
-   root. Brand overrides are set on this same element, never by editing rules. */
-.certificate {
-  --cert-paper: #ffffff;
-  --cert-ink: #1d2433;
-  --cert-muted: #5f6b80;
-  --cert-border: #1f4fae;
-  --cert-flourish: #1f4fae;
-  --cert-rule: #b9c3d6;
-
-  /* US Letter landscape at 96dpi */
-  --cert-w: 1056px;
-  --cert-h: 816px;
+/* Black Border: blue double border with corner flourishes. Colors come from
+   the shared theme on the certificate root. */
+.template {
   --cert-inset-outer: 28px;
   --cert-inset-inner: 40px;
   --cert-border-outer: 6px;
@@ -24,37 +14,23 @@
   --cert-label-tracking: 0.32em;
   --cert-body: 17px;
 
-  position: relative;
-  width: var(--cert-w);
-  height: var(--cert-h);
-  background: var(--cert-paper);
-  color: var(--cert-ink);
-  font-family: var(--font-cormorant), Georgia, serif;
-  font-weight: 500;
-  line-height: 1.5;
-  overflow: hidden;
+  position: absolute;
+  inset: 0;
 }
 
-.certificate,
-.certificate *,
-.certificate::before,
-.certificate::after {
-  box-sizing: border-box;
-}
-
-.certificate::before,
-.certificate::after {
+.template::before,
+.template::after {
   content: "";
   position: absolute;
   pointer-events: none;
 }
 
-.certificate::before {
+.template::before {
   inset: var(--cert-inset-outer);
   border: var(--cert-border-outer) solid var(--cert-border);
 }
 
-.certificate::after {
+.template::after {
   inset: var(--cert-inset-inner);
   border: var(--cert-border-inner) solid var(--cert-border);
 }

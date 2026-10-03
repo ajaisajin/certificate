@@ -1,5 +1,9 @@
-import { BlackBorderCertificate } from "@/components/certificate/BlackBorderCertificate";
-import type { CertificateData } from "@/types/certificate";
+import { Certificate } from "@/components/certificate/Certificate";
+import {
+  DEFAULT_TEMPLATE_ID,
+  isTemplateId,
+  type CertificateData,
+} from "@/types/certificate";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
 
@@ -20,7 +24,10 @@ export default async function RenderCertificatePage({
     courseTitle: text(params.courseTitle),
     date: text(params.date),
     instructorName: text(params.instructorName),
+    templateId: isTemplateId(params.templateId)
+      ? params.templateId
+      : DEFAULT_TEMPLATE_ID,
   };
 
-  return <BlackBorderCertificate data={data} />;
+  return <Certificate data={data} />;
 }

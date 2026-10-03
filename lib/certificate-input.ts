@@ -1,11 +1,16 @@
-import type { CertificateData } from "@/types/certificate";
+import {
+  isTemplateId,
+  TEMPLATE_IDS,
+  type CertificateData,
+  type CertificateTextField,
+} from "@/types/certificate";
 
-export const CERTIFICATE_FIELDS = [
+export const CERTIFICATE_TEXT_FIELDS = [
   "recipientName",
   "courseTitle",
   "date",
   "instructorName",
-] as const satisfies readonly (keyof CertificateData)[];
+] as const satisfies readonly CertificateTextField[];
 
 export const MAX_FIELD_LENGTH = 200;
 
@@ -20,9 +25,9 @@ export function parseCertificateData(value: unknown): ParsedCertificateData {
   }
 
   const input = value as Record<string, unknown>;
-  const data = {} as CertificateData;
+  const text = {} as Record<CertificateTextField, string>;
 
-  for (const field of CERTIFICATE_FIELDS) {
+  for (const field of CERTIFICATE_TEXT_FIELDS) {
     const fieldValue = input[field];
     if (typeof fieldValue !== "string" || fieldValue.length > MAX_FIELD_LENGTH) {
       return {
@@ -30,8 +35,16 @@ export function parseCertificateData(value: unknown): ParsedCertificateData {
         error: `${field} must be a string of at most ${MAX_FIELD_LENGTH} characters.`,
       };
     }
-    data[field] = fieldValue;
+    text[field] = fieldValue;
   }
 
-  return { success: true, data };
+  const { templateId } = input;
+  if (!isTemplateId(templateId)) {
+    return {
+      success: false,
+      error: `templateId must be one of: ${TEMPLATE_IDS.join(", ")}.`,
+    };
+  }
+
+  return { success: true, data: { ...text, templateId } };
 }

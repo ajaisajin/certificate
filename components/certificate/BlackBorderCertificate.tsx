@@ -1,24 +1,13 @@
-import { Cormorant_Garamond } from "next/font/google";
-import type { CertificateData } from "@/types/certificate";
 import styles from "./BlackBorderCertificate.module.css";
 import { Flourish } from "./Flourish";
 import { LogoMark } from "./LogoMark";
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
+import type { TemplateProps } from "./templates";
 
 const FLOURISH_CORNERS = [styles.tl, styles.tr, styles.bl, styles.br];
 
-interface BlackBorderCertificateProps {
-  data: CertificateData;
-}
-
-export function BlackBorderCertificate({ data }: BlackBorderCertificateProps) {
+export function BlackBorderCertificate({ data }: TemplateProps) {
   return (
-    <article className={`${cormorant.variable} ${styles.certificate}`}>
+    <div className={styles.template}>
       {FLOURISH_CORNERS.map((corner) => (
         <Flourish key={corner} className={`${styles.flourish} ${corner}`} />
       ))}
@@ -44,6 +33,6 @@ export function BlackBorderCertificate({ data }: BlackBorderCertificateProps) {
           </div>
         </div>
       </div>
-    </article>
+    </div>
   );
 }

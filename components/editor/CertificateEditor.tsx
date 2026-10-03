@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import type { CertificateData } from "@/types/certificate";
+import {
+  DEFAULT_TEMPLATE_ID,
+  type CertificateData,
+} from "@/types/certificate";
 import { CertificateForm } from "./CertificateForm";
 import { CertificatePreview } from "./CertificatePreview";
 import { DownloadButtons } from "./DownloadButtons";
@@ -13,12 +16,16 @@ const INITIAL_CERTIFICATE: CertificateData = {
   courseTitle: "Modern JavaScript From The Beginning 2.0",
   date: "October 1, 2026",
   instructorName: DEFAULT_INSTRUCTOR_NAME,
+  templateId: DEFAULT_TEMPLATE_ID,
 };
 
 export function CertificateEditor() {
   const [data, setData] = useState(INITIAL_CERTIFICATE);
 
-  function handleChange(field: keyof CertificateData, value: string) {
+  function handleChange<Field extends keyof CertificateData>(
+    field: Field,
+    value: CertificateData[Field],
+  ) {
     setData((current) => ({ ...current, [field]: value }));
   }
 

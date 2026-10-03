@@ -1,0 +1,32 @@
+/* Theme contract shared by every template. The color variables are declared
+   here on the certificate root; brand overrides are set on this same element,
+   never by editing template rules. */
+.theme {
+  --cert-paper: #ffffff;
+  --cert-ink: #1d2433;
+  --cert-muted: #5f6b80;
+  --cert-border: #1f4fae;
+  --cert-flourish: #1f4fae;
+  --cert-rule: #b9c3d6;
+
+  /* US Letter landscape at 96dpi */
+  --cert-w: 1056px;
+  --cert-h: 816px;
+
+  position: relative;
+  width: var(--cert-w);
+  height: var(--cert-h);
+  background: var(--cert-paper);
+  color: var(--cert-ink);
+  font-family: var(--font-cormorant), Georgia, serif;
+  font-weight: 500;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+.theme,
+.theme *,
+.theme *::before,
+.theme *::after {
+  box-sizing: border-box;
+}
