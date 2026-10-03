@@ -20,6 +20,9 @@
 # production
 /build
 
+# puppeteer chrome download
+/.cache
+
 # misc
 .DS_Store
 *.pem

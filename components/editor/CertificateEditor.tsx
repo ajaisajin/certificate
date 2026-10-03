@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { CertificateData } from "@/types/certificate";
 import { CertificateForm } from "./CertificateForm";
 import { CertificatePreview } from "./CertificatePreview";
+import { DownloadPngButton } from "./DownloadPngButton";
 
 const DEFAULT_INSTRUCTOR_NAME = "Brad Traversy";
 
@@ -26,8 +27,9 @@ export function CertificateEditor() {
       <aside className="border-b border-border bg-surface p-6 lg:border-r lg:border-b-0">
         <CertificateForm data={data} onChange={handleChange} />
       </aside>
-      <main className="flex flex-col items-center justify-center bg-stage px-4 py-12 sm:px-8">
+      <main className="flex flex-col items-center justify-center gap-6 bg-stage px-4 py-12 sm:px-8">
         <CertificatePreview data={data} />
+        <DownloadPngButton data={data} />
       </main>
     </div>
   );
