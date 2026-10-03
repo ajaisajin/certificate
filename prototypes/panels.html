@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Certificreate - Brand and history</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flourish" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-linecap="round">
+    <path d="M8 88 V20 Q8 8 20 8 H88" stroke-width="2"/>
+    <path d="M16 88 V28 Q16 16 28 16 H88" stroke-width="1"/>
+    <path d="M24 24 C34 10 52 14 48 28 C45 38 32 34 36 26" stroke-width="1.5"/>
+    <path d="M24 24 C10 34 14 52 28 48 C38 45 34 32 26 36" stroke-width="1.5"/>
+    <circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="logo-mark" viewBox="0 0 92 92" fill="none" stroke="currentColor">
+    <circle cx="46" cy="46" r="42" stroke-width="2"/>
+    <circle cx="46" cy="46" r="36" stroke-width="1"/>
+    <text x="46" y="57" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="32" font-weight="700" fill="currentColor" stroke="none">TM</text>
+  </symbol>
+</svg>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">C</span> Certificreate</div>
+  <div class="topbar-actions">
+    <a class="btn btn-ghost btn-sm" href="editor.html">Editor</a>
+    <a class="btn btn-ghost btn-sm" href="panels.html">Brand + history</a>
+    <a class="btn btn-ghost btn-sm" href="certificate.html">Full size</a>
+    <button class="btn btn-sm" id="theme-toggle" type="button">Toggle light / dark</button>
+  </div>
+</header>
+<div class="layout">
+<aside class="sidebar">
+<div class="tabs">
+  <a class="tab" href="editor.html">Details</a>
+  <a class="tab is-active" href="panels.html">Brand</a>
+  <a class="tab is-active" href="panels.html">History <span class="tag">6</span></a>
+</div>
+<section>
+  <h2 class="section-title">Brand settings</h2>
+  <div class="field">
+    <label>Logo</label>
+    <div class="logo-drop">
+      <svg class="logo-preview"><use href="#logo-mark"/></svg>
+      <div>
+        <div>traversy-mark.png</div>
+        <div class="note">PNG or SVG, square works best. Stored in this browser only.</div>
+      </div>
+      <button class="btn btn-sm" type="button" style="margin-left:auto">Replace</button>
+    </div>
+  </div>
+  <div class="field">
+    <label for="b-instructor">Default instructor</label>
+    <input class="input" id="b-instructor" value="Brad Traversy">
+  </div>
+  <div class="field">
+    <label>Colors</label>
+    <div class="swatches">
+      <div class="swatch"><span class="swatch-chip" style="background:var(--cert-border)"></span>Border<span class="swatch-code">#1F4FAE</span></div>
+      <div class="swatch"><span class="swatch-chip" style="background:var(--cert-ink)"></span>Text<span class="swatch-code">#1D2433</span></div>
+      <div class="swatch"><span class="swatch-chip" style="background:var(--cert-flourish)"></span>Flourish<span class="swatch-code">#1F4FAE</span></div>
+      <div class="swatch"><span class="swatch-chip" style="background:var(--cert-paper)"></span>Paper<span class="swatch-code">#FFFFFF</span></div>
+    </div>
+  </div>
+</section>
+<section>
+  <h2 class="section-title">History</h2>
+  <ul class="history">
+    <li class="history-item is-active">
+      <span class="history-name">Priya Raghavan</span>
+      <span class="history-meta">Modern JavaScript 2.0 · Black Border · Oct 1, 2026</span>
+      <span class="history-actions"><button class="btn btn-sm" type="button">Open</button><button class="btn btn-sm btn-ghost" type="button">PNG</button><button class="btn btn-sm btn-ghost" type="button">PDF</button></span>
+    </li>
+    <li class="history-item">
+      <span class="history-name">Marcus Oyelaran</span>
+      <span class="history-meta">React Front To Back · Black Border · Sep 28, 2026</span>
+      <span class="history-actions"><button class="btn btn-sm" type="button">Open</button></span>
+    </li>
+    <li class="history-item">
+      <span class="history-name">Elena Kowalczyk</span>
+      <span class="history-meta">Node.js API Masterclass · Classic · Sep 24, 2026</span>
+      <span class="history-actions"><button class="btn btn-sm" type="button">Open</button></span>
+    </li>
+    <li class="history-item">
+      <span class="history-name">Dae-jung Park</span>
+      <span class="history-meta">Tailwind CSS From Scratch · Minimal · Sep 19, 2026</span>
+      <span class="history-actions"><button class="btn btn-sm" type="button">Open</button></span>
+    </li>
+    <li class="history-item">
+      <span class="history-name">Fatima Al-Sayed</span>
+      <span class="history-meta">Python Django Dev To Deployment · Black Border · Sep 12, 2026</span>
+      <span class="history-actions"><button class="btn btn-sm" type="button">Open</button></span>
+    </li>
+    <li class="history-item">
+      <span class="history-name">Tom Whitaker</span>
+      <span class="history-meta">50 Projects in 50 Days · Black Border · Sep 3, 2026</span>
+      <span class="history-actions"><button class="btn btn-sm" type="button">Open</button></span>
+    </li>
+  </ul>
+  <p class="note">History lives in this browser. Clearing site data removes it.</p>
+</section>
+</aside>
+<main class="stage">
+  <div class="stage-meta"><span>Re-opened from history</span><span>Live preview · Letter landscape</span></div>
+  <div class="preview-frame">
+<div class="certificate">
+  <svg class="flourish tl"><use href="#flourish"/></svg>
+  <svg class="flourish tr"><use href="#flourish"/></svg>
+  <svg class="flourish bl"><use href="#flourish"/></svg>
+  <svg class="flourish br"><use href="#flourish"/></svg>
+  <div class="cert-body">
+    <div class="cert-label">Traversy Media</div>
+    <h1 class="cert-title">Certificate</h1>
+    <div class="cert-title-sub">of completion</div>
+    <div class="cert-label cert-presented">This certificate is proudly presented to</div>
+    <div class="cert-name">Priya Raghavan</div>
+    <div class="cert-for">for successfully completing the course</div>
+    <div class="cert-course">Modern JavaScript From The Beginning 2.0</div>
+    <div class="cert-footer">
+      <div class="cert-sign">
+        <div class="cert-sign-value">Brad Traversy</div>
+        <div class="cert-label">Instructor</div>
+      </div>
+      <svg class="cert-logo"><use href="#logo-mark"/></svg>
+      <div class="cert-sign">
+        <div class="cert-sign-value">October 1, 2026</div>
+        <div class="cert-label">Date</div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="download-row">
+    <button class="btn btn-primary" type="button">Download PNG</button>
+    <button class="btn" type="button">Download PDF</button>
+  </div>
+</main>
+</div>
+<script>
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    const root = document.documentElement;
+    root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
+  });
+</script>
+</body>
+</html>

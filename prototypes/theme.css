@@ -1,0 +1,99 @@
+/* Certificreate theme - the durable output of /prototype.
+   Port the app tokens into app/globals.css @theme in the first UI feature.
+   The --cert-* tokens are the certificate artifact's defaults; brand settings
+   (feature 6a) override them, so they stay light regardless of app mode. */
+
+:root {
+  /* app surfaces (dark first) */
+  --bg: #0b0f17;
+  --surface: #121826;
+  --surface-2: #1a2233;
+  --border: #253046;
+
+  /* app text */
+  --text: #e7ecf4;
+  --muted: #94a0b4;
+  --faint: #5b667a;
+
+  /* accent: shares the certificate border blue */
+  --accent: #3b6fd8;
+  --accent-hover: #5584e6;
+  --accent-ink: #ffffff;
+  --accent-soft: rgb(59 111 216 / 0.16);
+  --focus-ring: rgb(85 132 230 / 0.55);
+
+  /* states */
+  --danger: #f2706b;
+  --success: #4cc38a;
+
+  /* preview stage behind the certificate */
+  --stage: #070a10;
+  --stage-shadow: 0 24px 60px rgb(0 0 0 / 0.55);
+
+  /* certificate artifact (always light, print-friendly) */
+  --cert-paper: #ffffff;
+  --cert-ink: #1d2433;
+  --cert-muted: #5f6b80;
+  --cert-border: #1f4fae;
+  --cert-flourish: #1f4fae;
+  --cert-rule: #b9c3d6;
+
+  /* certificate geometry: US Letter landscape at 96dpi (TODO confirm page size) */
+  --cert-w: 1056px;
+  --cert-h: 816px;
+  --cert-inset-outer: 28px;
+  --cert-inset-inner: 40px;
+  --cert-border-outer: 6px;
+  --cert-border-inner: 1.5px;
+  --cert-flourish-size: 96px;
+  --preview-scale: 0.58;
+
+  /* type */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", "Cormorant", Georgia, serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 13px;
+  --text-base: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+
+  --cert-title: 64px;
+  --cert-name: 58px;
+  --cert-course: 26px;
+  --cert-label: 13px;
+  --cert-label-tracking: 0.32em;
+  --cert-body: 17px;
+
+  /* scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 14px;
+}
+
+:root[data-theme="light"] {
+  --bg: #f4f6fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f6;
+  --border: #dde3ec;
+
+  --text: #141a26;
+  --muted: #5c6779;
+  --faint: #9aa4b5;
+
+  --accent: #1f4fae;
+  --accent-hover: #2a5fc9;
+  --accent-soft: rgb(31 79 174 / 0.10);
+  --focus-ring: rgb(31 79 174 / 0.35);
+
+  --stage: #e3e8f0;
+  --stage-shadow: 0 18px 44px rgb(20 30 50 / 0.18);
+}

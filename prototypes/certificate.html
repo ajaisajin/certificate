@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Certificreate - Black Border full size</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body { background: var(--stage); padding: var(--space-7); }
+  .certificate { margin: 0 auto; box-shadow: var(--stage-shadow); }
+  .bar { display: flex; justify-content: center; gap: var(--space-3); margin-bottom: var(--space-5); color: var(--muted); font-size: var(--text-sm); align-items: center; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="flourish" viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-linecap="round">
+    <path d="M8 88 V20 Q8 8 20 8 H88" stroke-width="2"/>
+    <path d="M16 88 V28 Q16 16 28 16 H88" stroke-width="1"/>
+    <path d="M24 24 C34 10 52 14 48 28 C45 38 32 34 36 26" stroke-width="1.5"/>
+    <path d="M24 24 C10 34 14 52 28 48 C38 45 34 32 26 36" stroke-width="1.5"/>
+    <circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="logo-mark" viewBox="0 0 92 92" fill="none" stroke="currentColor">
+    <circle cx="46" cy="46" r="42" stroke-width="2"/>
+    <circle cx="46" cy="46" r="36" stroke-width="1"/>
+    <text x="46" y="57" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="32" font-weight="700" fill="currentColor" stroke="none">TM</text>
+  </symbol>
+</svg>
+<div class="bar"><a class="btn btn-sm btn-ghost" href="editor.html">Back to editor</a><span>Black Border at export size: 1056 x 816 px (Letter landscape, 96dpi)</span><button class="btn btn-sm" id="theme-toggle" type="button">Toggle light / dark</button></div>
+<div class="certificate">
+  <svg class="flourish tl"><use href="#flourish"/></svg>
+  <svg class="flourish tr"><use href="#flourish"/></svg>
+  <svg class="flourish bl"><use href="#flourish"/></svg>
+  <svg class="flourish br"><use href="#flourish"/></svg>
+  <div class="cert-body">
+    <div class="cert-label">Traversy Media</div>
+    <h1 class="cert-title">Certificate</h1>
+    <div class="cert-title-sub">of completion</div>
+    <div class="cert-label cert-presented">This certificate is proudly presented to</div>
+    <div class="cert-name">Priya Raghavan</div>
+    <div class="cert-for">for successfully completing the course</div>
+    <div class="cert-course">Modern JavaScript From The Beginning 2.0</div>
+    <div class="cert-footer">
+      <div class="cert-sign">
+        <div class="cert-sign-value">Brad Traversy</div>
+        <div class="cert-label">Instructor</div>
+      </div>
+      <svg class="cert-logo"><use href="#logo-mark"/></svg>
+      <div class="cert-sign">
+        <div class="cert-sign-value">October 1, 2026</div>
+        <div class="cert-label">Date</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById("theme-toggle").addEventListener("click", () => {
+    const root = document.documentElement;
+    root.dataset.theme = root.dataset.theme === "light" ? "dark" : "light";
+  });
+</script>
+</body>
+</html>
