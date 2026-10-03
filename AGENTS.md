@@ -56,6 +56,9 @@ and installed dependencies before adding machinery.
 - Build: `npm run build`
 - Production server: `npm run start`
 - Lint: `npm run lint`
+- Test: `npm run test` (Vitest, one run)
+- Test watch: `npm run test:watch`
 
-No test runner is configured, so there is no test gate yet. Typecheck runs as
-part of `npm run build`. No combined Verify command or GitHub checks exist.
+Tests are a gate for logic-bearing changes. Test files sit next to their source
+as `*.test.ts`. Typecheck runs as part of `npm run build`. No combined Verify
+command or GitHub checks exist.
